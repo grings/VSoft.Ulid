@@ -6,6 +6,7 @@ program BMUlid;
 
 uses
   System.SysUtils,
+  System.SyncObjs,
   Spring.Benchmark,
   VSoft.Ulid in '..\Source\VSoft.Ulid.pas';
 

@@ -64,17 +64,26 @@ type
     function IsEmpty : boolean;
   end;
 
-{$IFDEF CPUX86}
+
 //only declared here to allow inlining.
+{$IFDEF CPUX86}
 procedure AtomicLoad(var target, source: UInt64);
 {$ENDIF}
-
+{$IF CompilerVersion < 24}
+{$IFDEF CPUX64}
+function AtomicCmpExchange(var Destination: UInt64; Exchange: UInt64; Comparand: Int64): UInt64;
+{$ELSE}
+function AtomicCmpExchange(var Destination: UInt64; Exchange: UInt64; Comparand: UInt64): UInt64;
+{$ENDIF}
+{$IFEND}
 implementation
 
 
 uses
   {$IFDEF MSWINDOWS}
   WinApi.Windows,
+  {$ELSE}
+  Posix.Systime,
   {$ENDIF}
   System.DateUtils;
 
@@ -139,9 +148,7 @@ begin
     result := WinApi.Windows.InterlockedCompareExchange64(Int64(Destination), Int64(Exchange), Int64(Comparand));
 end;
 {$ENDIF}
-
 {$IFEND}
-
 
 
 {$IFDEF CPUX86}
@@ -328,15 +335,12 @@ begin
   result := (UInt64(ft) - UInt64(TimeOffset)) div 10000;
 end;
 {$ELSE}
-//TODO : find an implementation of this for non windows platforms in earlier versions
-// NowUtc only available in 11.3 or later.
-// this is slow.
-function UNIXTimeInMilliseconds: UInt64;inline;
+function UNIXTimeInMilliseconds: UInt64; inline;
 var
-  DT: TDateTime;
+  Ltv: timeval;
 begin
-  DT := TDateTime.NowUTC;
-  Result := MilliSecondsBetween(DT, UnixDateDelta);
+  gettimeofday(Ltv, nil);
+  Result := Ltv.tv_sec * 1000 + Ltv.tv_usec div 1000;
 end;
 {$ENDIF}
 
