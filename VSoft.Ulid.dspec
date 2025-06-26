@@ -1,58 +1,34 @@
 {
  "metadata": {
   "id": "VSoft.Ulid",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "ULID generator/parser -  Universally Unique Lexicographically Sortable Identifier\r\n",
   "authors": "Vincent Parrett",
   "projectUrl": "https://github.com/VSoftTechnologies/VSoft.Ulid",
   "repositoryUrl": "https://github.com/VSoftTechnologies/VSoft.Ulid",
   "license": "Apache-2.0",
   "copyright": "Vincent Parrett",
-  "tags": "Uid Unique Guid parser"
+  "tags": "Uid Unique Guid parser",
+  "readme": "README.md"
  },
  "targetPlatforms": [
   {
-   "compiler": "XE2",
+   "compiler": "10.0",
    "platforms": "Win32, Win64",
+   "template": "--unset--"
+  },
+  {
+   "compiler": "12.0",
+   "platforms": "Win32, Win64, OSX64, OSXARM64, Android, Android64, iOS64, LinuxIntel64",
    "template": "default"
   },
   {
-   "compiler": "XE3",
-   "platforms": "Win32, Win64",
+   "compiler": "11.0",
+   "platforms": "Win32, Win64, OSX64, OSXARM64, Android, Android64, iOS64, LinuxIntel64",
    "template": "default"
   },
   {
-   "compiler": "XE4",
-   "platforms": "Win32, Win64",
-   "template": "default"
-  },
-  {
-   "compiler": "XE5",
-   "platforms": "Win32, Win64",
-   "template": "default"
-  },
-  {
-   "compiler": "XE7",
-   "platforms": "Win32, Win64",
-   "template": "default"
-  },
-  {
-   "compiler": "XE6",
-   "platforms": "Win32, Win64",
-   "template": "default"
-  },
-  {
-   "compiler": "XE8",
-   "platforms": "Win32, Win64",
-   "template": "default"
-  },
-  {
-   "compiler": "10.1",
-   "platforms": "Win32, Win64",
-   "template": "default"
-  },
-  {
-   "compiler": "10.2",
+   "compiler": "10.3",
    "platforms": "Win32, Win64",
    "template": "default"
   },
@@ -62,24 +38,54 @@
    "template": "default"
   },
   {
-   "compiler": "10.3",
+   "compiler": "10.2",
    "platforms": "Win32, Win64",
    "template": "default"
   },
   {
-   "compiler": "11.0",
-   "platforms": "Win32, Win64, OSX64, OSXARM64, Android, Android64, iOS64, LinuxIntel64",
-   "template": "default"
-  },
-  {
-   "compiler": "12.0",
-   "platforms": "Win32, Win64, OSX64, OSXARM64, Android, Android64, iOS64, LinuxIntel64",
-   "template": "default"
-  },
-  {
-   "compiler": "10.0",
+   "compiler": "10.1",
    "platforms": "Win32, Win64",
-   "template": "--unset--"
+   "template": "default"
+  },
+  {
+   "compiler": "XE8",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "XE6",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "XE7",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "XE5",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "XE4",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "XE3",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "XE2",
+   "platforms": "Win32, Win64",
+   "template": "default"
+  },
+  {
+   "compiler": "13.0",
+   "platforms": "Win32, Win64",
+   "template": "default"
   }
  ],
  "templates": [
