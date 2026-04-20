@@ -26,11 +26,6 @@ targetPlatforms:
 
 templates:
   - name: default
-    dependencies:
-      - id: VSoft.CancellationToken
-        version: "[0.1.4,]"
-      - id: Gabr42.OmniThreadLibrary
-        version: "[3.7.12,]"
 
     source:
       - src: ./LICENSE.txt
