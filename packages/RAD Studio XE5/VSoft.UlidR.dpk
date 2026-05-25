@@ -1,4 +1,4 @@
-package VSoft.UlidR;
+﻿package VSoft.UlidR;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -25,12 +25,13 @@ package VSoft.UlidR;
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
-{$IMPLICITBUILD ON}
+{$LIBSUFFIX '190'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
 
 requires
   rtl;
 
 contains
-  VSoft.Ulid in '..\Source\VSoft.Ulid.pas';
-
+  VSoft.Ulid in '..\..\source\VSoft.Ulid.pas';
 end.
